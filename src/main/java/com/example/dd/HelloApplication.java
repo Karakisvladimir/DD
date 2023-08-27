@@ -1,5 +1,9 @@
 package com.example.dd;
 import javafx.application.Application;
+import javafx.scene.layout.Priority;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
@@ -23,11 +27,14 @@ public class HelloApplication extends Application {
         welcomeWindow.setHeight(100);
 
         Label label = new Label("Welcome to the game of childhood and all smart people");
+        label.setFont(Font.font("Verdana", FontWeight.BOLD, 12));
+        label.setStyle("-fx-background-color: yellow; -fx-padding: 6px;");
+        label.setTextFill(Color.RED);
 
         Button okButton = new Button("OK");
-        Button startButton = new Button("Start");
+        //Button startButton = new Button("Start");
 
-        HBox hBox = new HBox(okButton, startButton);
+        HBox hBox = new HBox(okButton);
 
         VBox vBox = new VBox(label, hBox);
 
@@ -41,15 +48,18 @@ public class HelloApplication extends Application {
         mainWindow.setTitle("Cities");
         mainWindow.setWidth(400);
         mainWindow.setHeight(500);
-        label.setMaxWidth(100);
-        label.setMaxHeight(100);
+        label.setMaxWidth(400);
+        label.setMaxHeight(500);
 
         Label queryLabel = new Label("Enter name of Cities:");
         TextField queryTextField = new TextField();
-        Label queryLabel2 = new Label("Enter name of Cities:");
-        Button submitQueryButton = new Button("Computer: ");
+HBox.setHgrow(hBox, Priority.ALWAYS);
 
-        VBox mainVBox = new VBox(queryLabel, queryTextField, submitQueryButton);
+        Label queryLabel2 = new Label("Computer:");
+        Button submitQueryButton = new Button("Make a move ");
+        //TextField queryTextField2 = new TextField();
+
+        VBox mainVBox = new VBox(queryLabel, queryTextField,queryLabel2, submitQueryButton);
 
         Scene mainScene = new Scene(mainVBox);
 
