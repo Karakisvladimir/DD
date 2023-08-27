@@ -1,16 +1,17 @@
 package com.example.dd;
+
 import javafx.application.Application;
-import javafx.scene.layout.Priority;
+import javafx.geometry.Pos;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
+
 
 public class HelloApplication extends Application {
 
@@ -21,10 +22,12 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) {
 
+
         Stage welcomeWindow = new Stage();
         welcomeWindow.setTitle("Hi");
         welcomeWindow.setWidth(400);
         welcomeWindow.setHeight(100);
+
 
         Label label = new Label("Welcome to the game of childhood and all smart people");
         label.setFont(Font.font("Verdana", FontWeight.BOLD, 12));
@@ -32,18 +35,16 @@ public class HelloApplication extends Application {
         label.setTextFill(Color.RED);
 
         Button okButton = new Button("OK");
-        //Button startButton = new Button("Start");
 
-        HBox hBox = new HBox(okButton);
+        FlowPane flowPane = new FlowPane(label, okButton);
 
-        VBox vBox = new VBox(label, hBox);
+        flowPane.setAlignment(Pos.CENTER);
 
-        Scene welcomeScene = new Scene(vBox);
-
+        Scene welcomeScene = new Scene(flowPane);
         welcomeWindow.setScene(welcomeScene);
         welcomeWindow.show();
 
-
+        // Second window
         Stage mainWindow = new Stage();
         mainWindow.setTitle("Cities");
         mainWindow.setWidth(400);
@@ -53,13 +54,12 @@ public class HelloApplication extends Application {
 
         Label queryLabel = new Label("Enter name of Cities:");
         TextField queryTextField = new TextField();
-HBox.setHgrow(hBox, Priority.ALWAYS);
 
         Label queryLabel2 = new Label("Computer:");
         Button submitQueryButton = new Button("Make a move ");
-        //TextField queryTextField2 = new TextField();
 
-        VBox mainVBox = new VBox(queryLabel, queryTextField,queryLabel2, submitQueryButton);
+
+        VBox mainVBox = new VBox(queryLabel, queryTextField, queryLabel2, submitQueryButton);
 
         Scene mainScene = new Scene(mainVBox);
 
@@ -68,5 +68,4 @@ HBox.setHgrow(hBox, Priority.ALWAYS);
     }
 
 }
-
 
