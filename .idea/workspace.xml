@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f603064-d7f6-4249-841f-b101e8e8f4f7" name="Changes" comment="new font">
+    <list default="true" id="3f603064-d7f6-4249-841f-b101e8e8f4f7" name="Changes" comment="new font2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dd/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dd/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dd/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dd/HelloController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +93,34 @@
       <option name="project" value="LOCAL" />
       <updated>1693170238315</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="new font2">
+      <created>1693171243552</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693171243552</updated>
+    </task>
+    <task id="LOCAL-00003" summary="new font2">
+      <created>1693171391326</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693171391326</updated>
+    </task>
+    <task id="LOCAL-00004" summary="new font2">
+      <created>1693171408479</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693171408479</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new font" />
-    <option name="LAST_COMMIT_MESSAGE" value="new font" />
+    <MESSAGE value="new font3" />
+    <MESSAGE value="new font2" />
+    <option name="LAST_COMMIT_MESSAGE" value="new font2" />
   </component>
 </project>

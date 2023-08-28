@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) {
 
-
+        // First window
         Stage welcomeWindow = new Stage();
         welcomeWindow.setTitle("Hi");
         welcomeWindow.setWidth(400);
@@ -35,37 +35,38 @@ public class HelloApplication extends Application {
         label.setTextFill(Color.RED);
 
         Button okButton = new Button("OK");
+        okButton.setOnAction(e -> {
+            welcomeWindow.close();
+            Stage mainWindow = new Stage();
+            mainWindow.setTitle("Cities");
+            mainWindow.setWidth(400);
+            mainWindow.setHeight(500);
+            label.setMaxWidth(400);
+            label.setMaxHeight(500);
+
+            Label queryLabel = new Label("Enter name of Cities:");
+            TextField queryTextField = new TextField();
+
+            Label queryLabel2 = new Label("Computer:");
+            Button submitQueryButton = new Button("Make a move ");
+
+
+            VBox mainVBox = new VBox(label, queryLabel, queryTextField, queryLabel2, submitQueryButton);
+
+            Scene mainScene = new Scene(mainVBox);
+
+            mainWindow.setScene(mainScene);
+            mainWindow.show();
+        });
 
         FlowPane flowPane = new FlowPane(label, okButton);
-
         flowPane.setAlignment(Pos.CENTER);
 
         Scene welcomeScene = new Scene(flowPane);
         welcomeWindow.setScene(welcomeScene);
         welcomeWindow.show();
 
-        // Second window
-        Stage mainWindow = new Stage();
-        mainWindow.setTitle("Cities");
-        mainWindow.setWidth(400);
-        mainWindow.setHeight(500);
-        label.setMaxWidth(400);
-        label.setMaxHeight(500);
 
-        Label queryLabel = new Label("Enter name of Cities:");
-        TextField queryTextField = new TextField();
-
-        Label queryLabel2 = new Label("Computer:");
-        Button submitQueryButton = new Button("Make a move ");
-
-
-        VBox mainVBox = new VBox(queryLabel, queryTextField, queryLabel2, submitQueryButton);
-
-        Scene mainScene = new Scene(mainVBox);
-
-        mainWindow.setScene(mainScene);
-        mainWindow.show();
     }
 
 }
-
