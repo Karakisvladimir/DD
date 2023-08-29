@@ -28,6 +28,8 @@ public class MainWindow {
         Button loseButton = new Button("I give up");
         Button submitQueryButton = new Button("Make a move ");
 
+        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(queryTextField,queryLabel2));
+
         HBox hbox = new HBox(submitQueryButton, loseButton);
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(10);
