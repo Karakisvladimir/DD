@@ -15,10 +15,11 @@ public class CityGetterByFile extends CityGetter{
             String line = reader.readLine();
 
             while (line != null) {
+                citiesToProcess.add(line);
                 System.out.println(line);
                 // read next line
                 line = reader.readLine();
-                citiesToProcess.add(line);
+
             }
 
             reader.close();
