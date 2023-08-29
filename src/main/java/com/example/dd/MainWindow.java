@@ -26,6 +26,7 @@ public class MainWindow {
 
         Label queryLabel2 = new Label("Computer:");
         Button loseButton = new Button("I give up");
+        loseButton.setOnAction(e -> TotalAccountWindow.show());
         Button submitQueryButton = new Button("Make a move ");
 
         HBox hbox = new HBox(submitQueryButton, loseButton);
@@ -43,4 +44,3 @@ public class MainWindow {
         mainWindow.show();
     }
 }
-
