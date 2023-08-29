@@ -1,5 +1,6 @@
 package com.example.dd;
 
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,6 +11,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class MainWindow {
 
     public static void show() {
@@ -17,7 +21,7 @@ public class MainWindow {
         mainWindow.setTitle("Cities");
         mainWindow.setWidth(400);
         mainWindow.setHeight(500);
-        Label label = new Label(); //Label взят из javafx.scene.control
+        Label label = new Label();
         label.setMaxWidth(400);
         label.setMaxHeight(500);
 
@@ -26,7 +30,9 @@ public class MainWindow {
 
         Label queryLabel2 = new Label("Computer:");
         Button loseButton = new Button("I give up");
+        loseButton.setOnAction(e -> TotalAccountWindow.show());
         Button submitQueryButton = new Button("Make a move ");
+        submitQueryButton.setOnAction(e -> queryAction(queryTextField, queryLabel2));
 
         submitQueryButton.setOnAction(new OnMoveButtonEventHandler(queryTextField,queryLabel2));
 
@@ -44,5 +50,21 @@ public class MainWindow {
         mainWindow.setScene(mainScene);
         mainWindow.show();
     }
-}
 
+    private static void queryAction(TextField queryTextField, Label queryLabel2) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("list.txt"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if(line.equals(queryTextField.getText())) {
+                    queryLabel2.setText("Correct Word");
+                    return;
+                }
+            }
+            queryLabel2.setText("Incorrect Word");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+}

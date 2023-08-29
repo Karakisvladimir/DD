@@ -10,6 +10,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+
 public class WelcomeWindow {
     public static void show() {
         Stage welcomeWindow = new Stage();
@@ -29,15 +30,17 @@ public class WelcomeWindow {
         {
             welcomeWindow.close();
 
-            // Второе окно
             MainWindow.show();
         });
 
         FlowPane flowPane = new FlowPane(label, okButton);
         flowPane.setAlignment(Pos.CENTER);
+        flowPane.setPrefWidth(400);
+        flowPane.setPrefHeight(100);
 
         Scene welcomeScene = new Scene(flowPane);
         welcomeWindow.setScene(welcomeScene);
+        welcomeWindow.centerOnScreen();
         welcomeWindow.show();
     }
 }
