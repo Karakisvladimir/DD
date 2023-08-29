@@ -30,7 +30,6 @@ public class WelcomeWindow {
         {
             welcomeWindow.close();
 
-            // Второе окно
             MainWindow.show();
         });
 
@@ -41,7 +40,7 @@ public class WelcomeWindow {
 
         Scene welcomeScene = new Scene(flowPane);
         welcomeWindow.setScene(welcomeScene);
-        welcomeWindow.centerOnScreen();  // новая строчка
+        welcomeWindow.centerOnScreen();
         welcomeWindow.show();
     }
 }
