@@ -1,12 +1,10 @@
 package com.example.dd;
-import javafx.geometry.Insets;
+
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -38,9 +36,12 @@ public class WelcomeWindow {
 
         FlowPane flowPane = new FlowPane(label, okButton);
         flowPane.setAlignment(Pos.CENTER);
+        flowPane.setPrefWidth(400);
+        flowPane.setPrefHeight(100);
 
         Scene welcomeScene = new Scene(flowPane);
         welcomeWindow.setScene(welcomeScene);
+        welcomeWindow.centerOnScreen();  // новая строчка
         welcomeWindow.show();
     }
 }
