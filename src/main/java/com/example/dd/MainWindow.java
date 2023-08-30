@@ -32,7 +32,7 @@ public class MainWindow {
         Button loseButton = new Button("I give up");
         loseButton.setOnAction(e -> TotalAccountWindow.show());
         Button submitQueryButton = new Button("Make a move ");
-        submitQueryButton.setOnAction(e -> queryAction(queryTextField, queryLabel2));
+        //submitQueryButton.setOnAction(e -> queryAction(queryTextField, queryLabel2));
 
         submitQueryButton.setOnAction(new OnMoveButtonEventHandler(queryTextField,queryLabel2));
 

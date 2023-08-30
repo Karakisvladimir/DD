@@ -8,22 +8,33 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class OnMoveButtonEventHandler implements EventHandler {
-    private Label queryLabel2;
-    private TextField textField;
+    private Label answerLabel;
+    private TextField userTextField;
     private CityGetter cityGetter;
     public OnMoveButtonEventHandler(){
 
     }
-    public OnMoveButtonEventHandler(TextField textField,Label queryLabel2) {//TODO:remove later this constructor
-        this.textField = textField;
-        this.queryLabel2 = queryLabel2;
+    public OnMoveButtonEventHandler(TextField userTextField,Label answerLabel) {//TODO:remove later this constructor
+        this.userTextField = userTextField;
+        this.answerLabel = answerLabel;
         this.cityGetter = new CityGetterByFile();
     }
     @Override
     public void handle(Event event) {
-        String cityByUser = textField.getText();
-        String cityByComputer = cityGetter.getCity(cityByUser.charAt(cityByUser.length()-1));
-        queryLabel2.setText(cityByComputer);
+        String cityByUser = userTextField.getText();
+        if(cityGetter.validateCity(cityByUser)) {
+            cityGetter.addProcessedCity(userTextField.getText());
+            String cityByComputer = cityGetter.getCity(cityByUser.charAt(cityByUser.length()-1));
+            if(cityByComputer.equals("")) {
+                TotalAccountWindow.show();
+            }
+            else {
+                answerLabel.setText(cityByComputer);
+            }
+        }
+        else {
+            answerLabel.setText("Incorrect city name");
+        }
         //label.setText("Buttton move pressed");
     }
 }

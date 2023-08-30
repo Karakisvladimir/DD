@@ -21,7 +21,7 @@ public class CityGetterByFile extends CityGetter{
                 line = reader.readLine();
 
             }
-
+            citiesCatalog.addAll(citiesToProcess);
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
