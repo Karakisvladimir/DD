@@ -19,10 +19,10 @@ public class WelcomeWindow {
         welcomeWindow.setWidth(400);
         welcomeWindow.setHeight(100);
 
-        Label label = new Label("Welcome to the game of childhood and all smart people");
-        label.setFont(Font.font("Verdana", FontWeight.BOLD, 12));
-        label.setStyle("-fx-background-color: yellow; -fx-padding: 6px;");
-        label.setTextFill(Color.RED);
+        Label labelWelcome = new Label("Welcome to the game of childhood and all smart people");
+        labelWelcome.setFont(Font.font("Verdana", FontWeight.BOLD, 12));
+        labelWelcome.setStyle("-fx-background-color: yellow; -fx-padding: 6px;");
+        labelWelcome.setTextFill(Color.RED);
 
         Button okButton = new Button("OK");
         okButton.setOnAction(e ->
@@ -33,7 +33,7 @@ public class WelcomeWindow {
             MainWindow.show();
         });
 
-        FlowPane flowPane = new FlowPane(label, okButton);
+        FlowPane flowPane = new FlowPane(labelWelcome, okButton);
         flowPane.setAlignment(Pos.CENTER);
         flowPane.setPrefWidth(400);
         flowPane.setPrefHeight(100);
