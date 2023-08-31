@@ -13,11 +13,5 @@ public class LaunchApplication extends Application {
     @Override
     public void start(Stage stage) {
         WelcomeWindow.show();
-
-
-
-
-
-
     }
 }

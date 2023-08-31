@@ -1,16 +1,35 @@
 package CityGetter;
 
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class CityGetter {
-    HashSet<String> citiesToProcess = new HashSet<>();
-    HashSet<String> citiesCatalog = new HashSet<>();
-    HashSet<String> alreadyProcessed = new HashSet<>();
+    protected static LinkedList<String> citiesToProcess = new LinkedList<>();
+    protected static LinkedList<String> citiesCatalog = new LinkedList<>();
+    protected static LinkedList<String> alreadyProcessed = new LinkedList<>();
+
+    protected String lastCityByComputer = "";
+    public static void resetAll() {
+        alreadyProcessed.clear();
+        citiesToProcess.clear();
+        citiesToProcess.addAll(citiesCatalog);
+    }
+    public String getLastCityByComputer() {
+        return lastCityByComputer;
+    }
+
+    public boolean isCityUsed(String cityName){
+        return  alreadyProcessed.contains(cityName);
+    }
+
     public boolean validateCity(String cityName) {
+        if(cityName.equals("")) {
+            return false;
+        }
+        if(cityName.toLowerCase().charAt(0) != lastCityByComputer.charAt(lastCityByComputer.length()-1)) {
+            return false;
+        }
         return citiesCatalog.contains(cityName);
     }
     public void addProcessedCity(String cityName) {
@@ -26,6 +45,7 @@ public abstract class CityGetter {
         if(citiesWithCriteria.size() != 0) {
             citiesToProcess.remove(citiesWithCriteria.get(0));
             addProcessedCity(citiesWithCriteria.get(0));
+            lastCityByComputer = citiesWithCriteria.get(0);
             return citiesWithCriteria.get(0);
         }
         return "";

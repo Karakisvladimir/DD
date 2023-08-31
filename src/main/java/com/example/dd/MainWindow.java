@@ -1,6 +1,7 @@
 package com.example.dd;
 
 
+import com.example.dd.style.StyledLabel;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.BufferedReader;
@@ -25,22 +27,34 @@ public class MainWindow {
         label.setMaxWidth(400);
         label.setMaxHeight(500);
 
-        Label queryLabel = new Label("Enter name of Cities:");
-        TextField queryTextField = new TextField();
 
-        Label queryLabel2 = new Label("Computer:");
+        StyledLabel citiesLabelStyle = new StyledLabel(Color.TAN, Color.BLUE);
+        Label cityLabel = citiesLabelStyle.createStyledLabel("Enter name of Cities:");
+        TextField cityTextField = new TextField();
+
+
+        StyledLabel computerLabelStyle = new StyledLabel(Color.ORCHID, Color.BLUE);
+        Label computerLabel = computerLabelStyle.createStyledLabel("Computer:");
+
+
+        StyledLabel computerUnswerLabelStyle = new StyledLabel(Color.CORAL, Color.BLUE);
+        Label computerUnswerLabel = computerLabelStyle.createStyledLabel(null);
+        Label hintLabel = new Label();
         Button loseButton = new Button("I give up");
         loseButton.setOnAction(e -> TotalAccountWindow.show());
         Button submitQueryButton = new Button("Make a move ");
-        //submitQueryButton.setOnAction(e -> queryAction(queryTextField, queryLabel2));
 
-        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(queryTextField,queryLabel2));
+        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(cityTextField, computerUnswerLabel, hintLabel));
 
         HBox hbox = new HBox(submitQueryButton, loseButton);
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(10);
 
-        VBox mainVBox = new VBox(queryLabel, queryTextField, queryLabel2, hbox);
+        HBox hBoxComputerAnswer = new HBox(computerLabel, computerUnswerLabel);
+        hbox.setAlignment(Pos.CENTER);
+        hbox.setSpacing(10);
+
+        VBox mainVBox = new VBox(cityLabel, cityTextField, hBoxComputerAnswer, hintLabel, hbox);
         mainVBox.setAlignment(Pos.TOP_CENTER);
         mainVBox.setSpacing(10);
         mainVBox.setPadding(new Insets(10, 10, 10, 10));
@@ -51,20 +65,6 @@ public class MainWindow {
         mainWindow.show();
     }
 
-    private static void queryAction(TextField queryTextField, Label queryLabel2) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("list.txt"));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if(line.equals(queryTextField.getText())) {
-                    queryLabel2.setText("Correct Word");
-                    return;
-                }
-            }
-            queryLabel2.setText("Incorrect Word");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 
 }
