@@ -37,20 +37,20 @@ public class MainWindow {
         Label computerLabel = computerLabelStyle.createStyledLabel("Computer:");
 
 
-        StyledLabel computerUnswerLabelStyle = new StyledLabel(Color.CORAL, Color.BLUE);
-        Label computerUnswerLabel = computerLabelStyle.createStyledLabel(null);
+        StyledLabel computerAnswerLabelStyle = new StyledLabel(Color.CORAL, Color.BLUE);
+        Label computerAnswerLabel = computerLabelStyle.createStyledLabel(null);
         Label hintLabel = new Label();
         Button loseButton = new Button("I give up");
         loseButton.setOnAction(e -> TotalAccountWindow.show());
         Button submitQueryButton = new Button("Make a move ");
 
-        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(cityTextField, computerUnswerLabel, hintLabel));
+        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel));
 
         HBox hbox = new HBox(submitQueryButton, loseButton);
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(10);
 
-        HBox hBoxComputerAnswer = new HBox(computerLabel, computerUnswerLabel);
+        HBox hBoxComputerAnswer = new HBox(computerLabel, computerAnswerLabel);
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(10);
 
