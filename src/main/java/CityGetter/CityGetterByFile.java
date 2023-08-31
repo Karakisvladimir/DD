@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class CityGetterByFile extends CityGetter{
@@ -26,5 +27,7 @@ public class CityGetterByFile extends CityGetter{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Random rd = new Random();
+        lastCityByComputer = citiesCatalog.get(rd.nextInt(citiesCatalog.size())+1);
     }
 }

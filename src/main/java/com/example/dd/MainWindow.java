@@ -28,19 +28,25 @@ public class MainWindow {
         Label queryLabel = new Label("Enter name of Cities:");
         TextField queryTextField = new TextField();
 
-        Label queryLabel2 = new Label("Computer:");
+        Label computerLabel = new Label("Computer:");
+        Label computerAnswer = new Label();
+        Label hintLabel = new Label();
         Button loseButton = new Button("I give up");
         loseButton.setOnAction(e -> TotalAccountWindow.show());
         Button submitQueryButton = new Button("Make a move ");
         //submitQueryButton.setOnAction(e -> queryAction(queryTextField, queryLabel2));
 
-        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(queryTextField,queryLabel2));
+        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(queryTextField,computerAnswer,hintLabel));
 
         HBox hbox = new HBox(submitQueryButton, loseButton);
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(10);
 
-        VBox mainVBox = new VBox(queryLabel, queryTextField, queryLabel2, hbox);
+        HBox hBoxComputerAnswer = new HBox(computerLabel, computerAnswer);
+        hbox.setAlignment(Pos.CENTER);
+        hbox.setSpacing(10);
+
+        VBox mainVBox = new VBox(queryLabel, queryTextField, hBoxComputerAnswer,hintLabel, hbox);
         mainVBox.setAlignment(Pos.TOP_CENTER);
         mainVBox.setSpacing(10);
         mainVBox.setPadding(new Insets(10, 10, 10, 10));

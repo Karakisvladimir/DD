@@ -9,32 +9,43 @@ import javafx.scene.input.MouseEvent;
 
 public class OnMoveButtonEventHandler implements EventHandler {
     private Label answerLabel;
+    private Label hintLabel;
     private TextField userTextField;
     private CityGetter cityGetter;
+
     public OnMoveButtonEventHandler(){
 
     }
-    public OnMoveButtonEventHandler(TextField userTextField,Label answerLabel) {//TODO:remove later this constructor
+    public OnMoveButtonEventHandler(TextField userTextField,Label answerLabel, Label hintLabel) {//TODO:remove later this constructor
         this.userTextField = userTextField;
         this.answerLabel = answerLabel;
         this.cityGetter = new CityGetterByFile();
+        this.hintLabel = hintLabel;
+        answerLabel.setText(cityGetter.getLastCityByComputer());
+
     }
     @Override
     public void handle(Event event) {
         String cityByUser = userTextField.getText();
         if(cityGetter.validateCity(cityByUser)) {
-            cityGetter.addProcessedCity(userTextField.getText());
-            String cityByComputer = cityGetter.getCity(cityByUser.charAt(cityByUser.length()-1));
-            if(cityByComputer.equals("")) {
-                TotalAccountWindow.show();
+            if(!cityGetter.isCityUsed(cityByUser)){
+                cityGetter.addProcessedCity(userTextField.getText());
+                String cityByComputer = cityGetter.getCity(cityByUser.charAt(cityByUser.length()-1));
+                if(cityByComputer.equals("")) {
+                    TotalAccountWindow.show();
+                }
+                else {
+                    answerLabel.setText(cityByComputer);
+                    hintLabel.setText("");
+                }
             }
             else {
-                answerLabel.setText(cityByComputer);
+                hintLabel.setText("City already used.");
             }
+
         }
         else {
-            answerLabel.setText("Incorrect city name");
+            hintLabel.setText("Incorrect city name");
         }
-        //label.setText("Buttton move pressed");
     }
 }
