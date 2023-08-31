@@ -35,6 +35,7 @@ public class OnMoveButtonEventHandler implements EventHandler {
                 else {
                     answerLabel.setText(cityByComputer);
                     hintLabel.setText("");
+                    userTextField.setText("");
                 }
             }
             else {
