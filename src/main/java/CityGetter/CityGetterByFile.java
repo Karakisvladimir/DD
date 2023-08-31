@@ -12,7 +12,7 @@ public class CityGetterByFile extends CityGetter{
     public CityGetterByFile() {
         BufferedReader reader;
         try {
-            reader = new BufferedReader(new FileReader("src/main/resources/Cities.txt"));
+            reader = new BufferedReader(new FileReader("list.txt"));
             String line = reader.readLine();
 
             while (line != null) {

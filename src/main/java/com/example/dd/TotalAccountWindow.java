@@ -8,6 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class TotalAccountWindow {
@@ -18,12 +21,14 @@ public class TotalAccountWindow {
         window.setWidth(800);
         window.setHeight(400);
 
-        Label label = new Label("Total Account");
-        label.setMaxWidth(300);
-        TextField textField = new TextField();
-        textField.setMaxWidth(250);
 
-        Button submitButton = new Button("Submit");
+        Label label = new Label("YOU ARE LOSE, COMPUTER WIN");
+        label.setFont(Font.font("Verdana", FontWeight.BOLD, 16));
+        label.setStyle("-fx-background-color: blue; -fx-padding: 6px;");
+        label.setTextFill(Color.YELLOW);
+        Label label4 = new Label("Total Account  1 : 0");
+        label.setMaxWidth(300);
+        Button submitButton = new Button("PLAY AGAIN?");
         submitButton.setOnAction( e -> {
             window.close();
         });
@@ -32,7 +37,7 @@ public class TotalAccountWindow {
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(10);
 
-        VBox vBox = new VBox(label, textField, hbox);
+        VBox vBox = new VBox(label, label4, hbox);
         vBox.setAlignment(Pos.CENTER);
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(10, 10, 10, 10));
