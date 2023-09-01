@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f603064-d7f6-4249-841f-b101e8e8f4f7" name="Changes" comment="redactor window">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CityGetter/CityGetterByFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CityGetter/CityGetterByFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dd/style/StyledLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dd/style/StyledLabel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693418547497</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/main'">
+      <created>1693585787180</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693585787180</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,6 +213,7 @@
     <MESSAGE value="minor bug fix" />
     <MESSAGE value="events" />
     <MESSAGE value="redactor window" />
-    <option name="LAST_COMMIT_MESSAGE" value="redactor window" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'" />
   </component>
 </project>
