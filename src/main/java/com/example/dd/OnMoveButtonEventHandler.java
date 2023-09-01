@@ -13,6 +13,7 @@ public class OnMoveButtonEventHandler implements EventHandler {
     private TextField userTextField;
     private CityGetter cityGetter;
 
+
     public OnMoveButtonEventHandler(){
     }
     public OnMoveButtonEventHandler(TextField userTextField,Label answerLabel, Label hintLabel) {

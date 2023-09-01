@@ -28,16 +28,16 @@ public class MainWindow {
         label.setMaxHeight(500);
 
 
-        StyledLabel citiesLabelStyle = new StyledLabel(Color.TAN, Color.BLUE);
-        Label cityLabel = citiesLabelStyle.createStyledLabel("Enter name of Cities:");
+        StyledLabel citiesLabelStyle = new StyledLabel();
+        Label cityLabel = citiesLabelStyle.createStyledLabel("Enter the City's name:");
         TextField cityTextField = new TextField();
 
 
-        StyledLabel computerLabelStyle = new StyledLabel(Color.ORCHID, Color.BLUE);
+        StyledLabel computerLabelStyle = new StyledLabel();
         Label computerLabel = computerLabelStyle.createStyledLabel("Computer:");
 
 
-        StyledLabel computerAnswerLabelStyle = new StyledLabel(Color.CORAL, Color.BLUE);
+        StyledLabel computerAnswerLabelStyle = new StyledLabel();
         Label computerAnswerLabel = computerLabelStyle.createStyledLabel(null);
         Label hintLabel = new Label();
         Button loseButton = new Button("I give up");

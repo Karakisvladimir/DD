@@ -15,11 +15,11 @@ public class WelcomeWindow {
     public static void show() {
         Stage welcomeWindow = new Stage();
         welcomeWindow.show();
-        welcomeWindow.setTitle("Hi");
+        welcomeWindow.setTitle("Welcome!");
         welcomeWindow.setWidth(400);
         welcomeWindow.setHeight(100);
 
-        Label labelWelcome = new Label("Welcome to the game of childhood and all smart people");
+        Label labelWelcome = new Label("Welcome to the game of childhood and all smart people!");
         labelWelcome.setFont(Font.font("Verdana", FontWeight.BOLD, 12));
         labelWelcome.setStyle("-fx-background-color: yellow; -fx-padding: 6px;");
         labelWelcome.setTextFill(Color.RED);
