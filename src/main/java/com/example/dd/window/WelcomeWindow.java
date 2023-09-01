@@ -1,5 +1,6 @@
-package com.example.dd;
+package com.example.dd.window;
 
+import com.example.dd.window.MainWindow;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;

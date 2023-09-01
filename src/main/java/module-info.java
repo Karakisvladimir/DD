@@ -7,4 +7,8 @@ module com.example.dd {
             
     opens com.example.dd to javafx.fxml;
     exports com.example.dd;
+    exports com.example.dd.window;
+    opens com.example.dd.window to javafx.fxml;
+    exports com.example.dd.app.impl;
+    opens com.example.dd.app.impl to javafx.fxml;
 }

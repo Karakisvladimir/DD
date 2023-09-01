@@ -1,5 +1,6 @@
-package com.example.dd;
+package com.example.dd.app.impl;
 
+import com.example.dd.window.WelcomeWindow;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

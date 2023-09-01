@@ -1,11 +1,11 @@
-package com.example.dd;
+package com.example.dd.app.impl;
 
 import CityGetter.*;
+import com.example.dd.window.TotalAccountWindow;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 public class OnMoveButtonEventHandler implements EventHandler {
     private Label answerLabel;

@@ -1,6 +1,7 @@
-package com.example.dd;
+package com.example.dd.window;
 
 
+import com.example.dd.app.impl.OnMoveButtonEventHandler;
 import com.example.dd.style.StyledLabel;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -13,11 +14,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-//import java.io.BufferedReader;
-//import java.io.FileReader;
 
 public class MainWindow {
-
     public static void show() {
         Stage mainWindow = new Stage();
         mainWindow.setTitle("Cities");
@@ -27,21 +25,22 @@ public class MainWindow {
         label.setMaxWidth(400);
         label.setMaxHeight(500);
 
-
         StyledLabel citiesLabelStyle = new StyledLabel(Color.TAN);
         Label cityLabel = citiesLabelStyle.createStyledLabel("Enter name of Cities:");
         TextField cityTextField = new TextField();
 
-
         StyledLabel computerLabelStyle = new StyledLabel(Color.ORCHID);
         Label computerLabel = computerLabelStyle.createStyledLabel("Computer:");
 
-
         StyledLabel computerAnswerLabelStyle = new StyledLabel(Color.CORAL);
-        Label computerAnswerLabel = computerLabelStyle.createStyledLabel(null);
+        Label computerAnswerLabel = computerAnswerLabelStyle.createStyledLabel(null);
         Label hintLabel = new Label();
         Button loseButton = new Button("I give up");
-        loseButton.setOnAction(e -> TotalAccountWindow.show());
+        loseButton.setOnAction(e -> {
+            mainWindow.close();
+            TotalAccountWindow.show();
+        });
+
         Button submitQueryButton = new Button("Make a move ");
 
         submitQueryButton.setOnAction(new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel));
@@ -64,7 +63,4 @@ public class MainWindow {
         mainWindow.setScene(mainScene);
         mainWindow.show();
     }
-
-
-
 }

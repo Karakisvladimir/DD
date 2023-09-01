@@ -7,7 +7,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 public class StyledVBox {
 
-        public static VBox createStyledVBox(Label labelResult, Label labelTotalAccount, HBox hbox) {
+        public static VBox createStyledVBox(Label labelResult, Label labelTotalAccount, Label labelWin,HBox hbox) {
             VBox vBox = new VBox(labelResult,labelTotalAccount, hbox);
             vBox.setAlignment(Pos.CENTER);
             vBox.setSpacing(10);
