@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 
@@ -35,6 +36,9 @@ public class MainWindow {
         StyledLabel computerAnswerLabelStyle = new StyledLabel(Color.CORAL);
         Label computerAnswerLabel = computerAnswerLabelStyle.createStyledLabel(null);
         Label hintLabel = new Label();
+
+        StyledLabel sorryLabelStyle = new StyledLabel(Color.DARKBLUE);
+        Label sorryLabel = sorryLabelStyle.createStyledLabel("If you can't answer press the button\n\t\t  <<I give up>> ");
         Button loseButton = new Button("I give up");
         loseButton.setOnAction(e -> {
             mainWindow.close();
@@ -53,11 +57,12 @@ public class MainWindow {
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(10);
 
-        VBox mainVBox = new VBox(cityLabel, cityTextField, hBoxComputerAnswer, hintLabel, hbox);
+        VBox mainVBox = new VBox(cityLabel, cityTextField, hBoxComputerAnswer,hintLabel, sorryLabel,hbox);
         mainVBox.setAlignment(Pos.TOP_CENTER);
         mainVBox.setSpacing(10);
         mainVBox.setPadding(new Insets(10, 10, 10, 10));
 
+        sorryLabel.setFont(Font.font(12));
         Scene mainScene = new Scene(mainVBox);
 
         mainWindow.setScene(mainScene);

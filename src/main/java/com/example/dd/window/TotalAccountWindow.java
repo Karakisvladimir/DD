@@ -24,7 +24,7 @@ public class TotalAccountWindow {
         StyledLabel winLabelStyle = new StyledLabel(Color.ORCHID);
         Label labelWin = winLabelStyle.createStyledLabel("YOU ARE LOSE, COMPUTER WIN");
         StyledLabel totalLabelStyle = new StyledLabel(Color.GREEN);
-        Label labelTotalWin = winLabelStyle.createStyledLabel("Total Account  ");
+        Label labelTotalWin = totalLabelStyle.createStyledLabel("Total Account  ");
 
 
         Button submitButton = new Button("PLAY AGAIN?");
