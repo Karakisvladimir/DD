@@ -5,15 +5,19 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class CityGetter {
-    protected static LinkedList<String> citiesToProcess = new LinkedList<>();
-    protected static LinkedList<String> citiesCatalog = new LinkedList<>();
-    protected static LinkedList<String> alreadyProcessed = new LinkedList<>();
+    protected LinkedList<String> citiesToProcess = new LinkedList<>();
+    protected LinkedList<String> citiesCatalog = new LinkedList<>();
+    protected LinkedList<String> alreadyProcessed = new LinkedList<>();
 
     protected String lastCityByComputer = "";
-    public static void resetAll() {
+    public void resetAll() {
         alreadyProcessed.clear();
         citiesToProcess.clear();
         citiesToProcess.addAll(citiesCatalog);
+    }
+
+    public void removeCityToProcess(String cityName) {
+        citiesToProcess.remove(cityName);
     }
     public String getLastCityByComputer() {
         return lastCityByComputer;

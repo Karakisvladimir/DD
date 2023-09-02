@@ -12,7 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import static CityGetter.CityGetter.resetAll;
+//import static CityGetter.CityGetter.resetAll;
 
 public class TotalAccountWindow {
 
@@ -22,10 +22,11 @@ public class TotalAccountWindow {
         totalWindow.setWidth(800);
         totalWindow.setHeight(400);
         Label labelWin = new Label();
-        if (gameScore.getHumanScore() > gameScore.getComputerScore()) {
+        if (gameScore.getHumanScore() == gameScore.getComputerScore()) {
             labelWin.setText(" YOU ARE WIN, COMPUTER LOSE");
         } else {
             labelWin.setText("YOU ARE LOSE, COMPUTER WIN");
+        }
             // Добавила расчет счета
             Label labelTotalWin = new Label("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
 
@@ -34,6 +35,7 @@ public class TotalAccountWindow {
                 totalWindow.close();
                 //Добавила вызов метода сброса счета
                 gameScore.resetScore();
+
                 MainWindow.show();
             });
             HBox hbox = new HBox(submitButton);
@@ -46,7 +48,7 @@ public class TotalAccountWindow {
             Scene mainScene = new Scene(vBox);
             totalWindow.setScene(mainScene);
             totalWindow.show(); // Здесь вы должны передать аргумент.
-        }
+
     }
 
 

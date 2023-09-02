@@ -26,6 +26,8 @@ public class MainWindow {
         Label label = new Label();
         label.setMaxWidth(400);
         label.setMaxHeight(500);
+        GameScore gameScore = new GameScore();
+        gameScore.incrementComputerScore();
 
         StyledLabel citiesLabelStyle = new StyledLabel(Color.TAN);
         Label cityLabel = citiesLabelStyle.createStyledLabel("Enter name of Cities:");
@@ -38,17 +40,18 @@ public class MainWindow {
         Label computerAnswerLabel = computerAnswerLabelStyle.createStyledLabel(null);
         Label hintLabel = new Label();
 
+        Button submitQueryButton = new Button("Make a move ");
+        OnMoveButtonEventHandler onMoveButtonEventHandler = new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel, gameScore);
+        submitQueryButton.setOnAction(onMoveButtonEventHandler);
+
         StyledLabel sorryLabelStyle = new StyledLabel(Color.DARKBLUE);
         Label sorryLabel = sorryLabelStyle.createStyledLabel("If you can't answer press the button\n\t\t  <<I give up>> ");
         Button loseButton = new Button("I give up");
         loseButton.setOnAction(e -> {
+
+            TotalAccountWindow.show(onMoveButtonEventHandler.getGameScore());
             mainWindow.close();
-            TotalAccountWindow.show(new GameScore());
         });
-
-        Button submitQueryButton = new Button("Make a move ");
-
-        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel));
 
         HBox hbox = new HBox(submitQueryButton, loseButton);
         hbox.setAlignment(Pos.CENTER);
