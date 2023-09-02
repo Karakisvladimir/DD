@@ -1,6 +1,7 @@
 package com.example.dd.window;
 
 
+import com.example.dd.app.impl.GameScore;
 import com.example.dd.app.impl.OnMoveButtonEventHandler;
 import com.example.dd.style.StyledLabel;
 import javafx.geometry.Insets;
@@ -42,7 +43,7 @@ public class MainWindow {
         Button loseButton = new Button("I give up");
         loseButton.setOnAction(e -> {
             mainWindow.close();
-            TotalAccountWindow.show();
+            TotalAccountWindow.show(new GameScore());
         });
 
         Button submitQueryButton = new Button("Make a move ");

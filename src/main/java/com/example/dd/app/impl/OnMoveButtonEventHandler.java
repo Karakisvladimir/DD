@@ -12,6 +12,7 @@ public class OnMoveButtonEventHandler implements EventHandler {
     private Label hintLabel;
     private TextField userTextField;
     private CityGetter cityGetter;
+    private GameScore gameScore;
 
     public OnMoveButtonEventHandler(){
     }
@@ -21,20 +22,23 @@ public class OnMoveButtonEventHandler implements EventHandler {
         this.cityGetter = new CityGetterByFile();
         this.hintLabel = hintLabel;
         this.answerLabel.setText(cityGetter.getLastCityByComputer());
+        this.gameScore = new GameScore();
     }
     @Override
     public void handle(Event event) {
+        gameScore.incrementHumanScore();
         String cityByUser = userTextField.getText();
         if(cityGetter.validateCity(cityByUser)) {
             if(!cityGetter.isCityUsed(cityByUser)) {
                 cityGetter.addProcessedCity(userTextField.getText());
                 String cityByComputer = cityGetter.getCity(cityByUser.charAt(cityByUser.length()-1));
                 if(cityByComputer.equals("")) {
-                    TotalAccountWindow.show();
+                    TotalAccountWindow.show(gameScore);
                 }
                 else {
                     answerLabel.setText(cityByComputer);
                     hintLabel.setText("");
+                    gameScore.incrementComputerScore();
                     userTextField.setText("");
                 }
             }

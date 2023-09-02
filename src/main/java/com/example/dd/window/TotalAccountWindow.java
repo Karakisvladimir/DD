@@ -1,5 +1,6 @@
 package com.example.dd.window;
 
+import com.example.dd.app.impl.GameScore;
 import com.example.dd.style.StyledLabel;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,37 +16,38 @@ import static CityGetter.CityGetter.resetAll;
 
 public class TotalAccountWindow {
 
-    public static void show() {
+    public static void show(GameScore gameScore) {
         Stage totalWindow = new Stage();
         totalWindow.setTitle("TotalAccountWindow");
         totalWindow.setWidth(800);
         totalWindow.setHeight(400);
+        Label labelWin = new Label();
+        if (gameScore.getHumanScore() > gameScore.getComputerScore()) {
+            labelWin.setText(" YOU ARE WIN, COMPUTER LOSE");
+        } else {
+            labelWin.setText("YOU ARE LOSE, COMPUTER WIN");
+            // Добавила расчет счета
+            Label labelTotalWin = new Label("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
 
-        StyledLabel winLabelStyle = new StyledLabel(Color.ORCHID);
-        Label labelWin = winLabelStyle.createStyledLabel("YOU ARE LOSE, COMPUTER WIN");
-        StyledLabel totalLabelStyle = new StyledLabel(Color.GREEN);
-        Label labelTotalWin = totalLabelStyle.createStyledLabel("Total Account  ");
-
-
-        Button submitButton = new Button("PLAY AGAIN?");
-        submitButton.setOnAction(e -> {
-            totalWindow.close();
-            resetAll();
-            MainWindow.show();
-        });
-
-        HBox hbox = new HBox(submitButton);
-        hbox.setAlignment(Pos.CENTER);
-        hbox.setSpacing(10);
-
-        VBox vBox = new VBox(labelWin, labelTotalWin, hbox);
-        vBox.setAlignment(Pos.CENTER);
-        vBox.setSpacing(10);
-        vBox.setPadding(new Insets(10, 10, 10, 10));
-
-        Scene mainScene = new Scene(vBox);
-
-        totalWindow.setScene(mainScene);
-        totalWindow.show();
+            Button submitButton = new Button("PLAY AGAIN?");
+            submitButton.setOnAction(e -> {
+                totalWindow.close();
+                //Добавила вызов метода сброса счета
+                gameScore.resetScore();
+                MainWindow.show();
+            });
+            HBox hbox = new HBox(submitButton);
+            hbox.setAlignment(Pos.CENTER);
+            hbox.setSpacing(10);
+            VBox vBox = new VBox(labelWin, labelTotalWin, hbox);
+            vBox.setAlignment(Pos.CENTER);
+            vBox.setSpacing(10);
+            vBox.setPadding(new Insets(10, 10, 10, 10));
+            Scene mainScene = new Scene(vBox);
+            totalWindow.setScene(mainScene);
+            totalWindow.show(); // Здесь вы должны передать аргумент.
+        }
     }
+
+
 }
