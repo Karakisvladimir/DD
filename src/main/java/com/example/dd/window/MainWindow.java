@@ -41,7 +41,7 @@ public class MainWindow {
         Label hintLabel = new Label();
 
         Button submitQueryButton = new Button("Make a move ");
-        OnMoveButtonEventHandler onMoveButtonEventHandler = new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel, gameScore);
+        OnMoveButtonEventHandler onMoveButtonEventHandler = new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel, gameScore, mainWindow);
         submitQueryButton.setOnAction(onMoveButtonEventHandler);
 
         StyledLabel sorryLabelStyle = new StyledLabel(Color.DARKBLUE);
