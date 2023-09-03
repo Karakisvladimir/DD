@@ -21,28 +21,18 @@ public class TotalAccountWindow {
         totalWindow.setWidth(800);
         totalWindow.setHeight(400);
         StyledLabel winLabelStyle = new StyledLabel(Color.GREEN);
-        Label labelWin = winLabelStyle.createStyledLabel(" ");
-        if (gameScore.getHumanScore() != gameScore.getComputerScore()) {
+        Label labelWin = winLabelStyle.createStyledLabel("  ");
+
+        if (gameScore.getHumanScore() == gameScore.getComputerScore()) {
             labelWin.setText(" YOU ARE WIN, COMPUTER LOSE");
         } else {
             labelWin.setText("YOU ARE LOSE, COMPUTER WIN");
         }
-<<<<<<<<< Temporary merge branch 1
-
-        Label labelTotalWin = new Label("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
-=========
-        StyledLabel labelTotalWinLabelStyle = new StyledLabel(Color.DARKBLUE);
-        Label labelTotalWin = labelTotalWinLabelStyle.createStyledLabel("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
-
->>>>>>>>> Temporary merge branch 2
-
+        StyledLabel winTotalLabelStyle = new StyledLabel(Color.BLUEVIOLET);
+        Label labelTotalWin = winTotalLabelStyle.createStyledLabel("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
         Button submitButton = new Button("PLAY AGAIN?");
         submitButton.setOnAction(e -> {
             totalWindow.close();
-<<<<<<<<< Temporary merge branch 1
-            gameScore.resetScore();
-=========
-
 
             gameScore.resetScore();
 
@@ -58,19 +48,6 @@ public class TotalAccountWindow {
         Scene mainScene = new Scene(vBox);
         totalWindow.setScene(mainScene);
         totalWindow.show();
->>>>>>>>> Temporary merge branch 2
 
-            MainWindow.show();
-        });
-        HBox hbox = new HBox(submitButton);
-        hbox.setAlignment(Pos.CENTER);
-        hbox.setSpacing(10);
-        VBox vBox = new VBox(labelWin, labelTotalWin, hbox);
-        vBox.setAlignment(Pos.CENTER);
-        vBox.setSpacing(10);
-        vBox.setPadding(new Insets(10, 10, 10, 10));
-        Scene mainScene = new Scene(vBox);
-        totalWindow.setScene(mainScene);
-        totalWindow.show();
     }
 }
