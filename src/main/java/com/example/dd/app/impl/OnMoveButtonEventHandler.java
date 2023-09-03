@@ -20,7 +20,6 @@ public class OnMoveButtonEventHandler implements EventHandler {
 
     public OnMoveButtonEventHandler() {
     }
-
     public OnMoveButtonEventHandler(TextField userTextField, Label answerLabel, Label hintLabel, GameScore gameScore) {
         this.userTextField = userTextField;
         this.answerLabel = answerLabel;
@@ -58,5 +57,9 @@ public class OnMoveButtonEventHandler implements EventHandler {
         } else {
             hintLabel.setText("Incorrect city name");
         }
+    }
+
+    public GameScore getGameScore() {
+        return gameScore;
     }
 }
