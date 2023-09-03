@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+//import static CityGetter.CityGetter.resetAll;
 
 public class TotalAccountWindow {
 
@@ -20,36 +21,33 @@ public class TotalAccountWindow {
         totalWindow.setTitle("TotalAccountWindow");
         totalWindow.setWidth(800);
         totalWindow.setHeight(400);
-        StyledLabel winLabelStyle = new StyledLabel(Color.GREEN);
-        Label labelWin = winLabelStyle.createStyledLabel(" ");
-        if (gameScore.getHumanScore() != gameScore.getComputerScore()) {
+        Label labelWin = new Label();
+        if (gameScore.getHumanScore() == gameScore.getComputerScore()) {
             labelWin.setText(" YOU ARE WIN, COMPUTER LOSE");
         } else {
             labelWin.setText("YOU ARE LOSE, COMPUTER WIN");
         }
-        StyledLabel labelTotalWinLabelStyle = new StyledLabel(Color.DARKBLUE);
-        Label labelTotalWin = labelTotalWinLabelStyle.createStyledLabel("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
+            // Добавила расчет счета
+            Label labelTotalWin = new Label("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
 
+            Button submitButton = new Button("PLAY AGAIN?");
+            submitButton.setOnAction(e -> {
+                totalWindow.close();
+                //Добавила вызов метода сброса счета
+                gameScore.resetScore();
 
-        Button submitButton = new Button("PLAY AGAIN?");
-        submitButton.setOnAction(e -> {
-            totalWindow.close();
-
-
-            gameScore.resetScore();
-
-            MainWindow.show();
-        });
-        HBox hbox = new HBox(submitButton);
-        hbox.setAlignment(Pos.CENTER);
-        hbox.setSpacing(10);
-        VBox vBox = new VBox(labelWin, labelTotalWin, hbox);
-        vBox.setAlignment(Pos.CENTER);
-        vBox.setSpacing(10);
-        vBox.setPadding(new Insets(10, 10, 10, 10));
-        Scene mainScene = new Scene(vBox);
-        totalWindow.setScene(mainScene);
-        totalWindow.show();
+                MainWindow.show();
+            });
+            HBox hbox = new HBox(submitButton);
+            hbox.setAlignment(Pos.CENTER);
+            hbox.setSpacing(10);
+            VBox vBox = new VBox(labelWin, labelTotalWin, hbox);
+            vBox.setAlignment(Pos.CENTER);
+            vBox.setSpacing(10);
+            vBox.setPadding(new Insets(10, 10, 10, 10));
+            Scene mainScene = new Scene(vBox);
+            totalWindow.setScene(mainScene);
+            totalWindow.show(); // Здесь вы должны передать аргумент.
 
     }
 

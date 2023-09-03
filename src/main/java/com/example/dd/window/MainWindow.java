@@ -41,14 +41,13 @@ public class MainWindow {
         Label hintLabel = new Label();
 
         Button submitQueryButton = new Button("Make a move ");
-        OnMoveButtonEventHandler onMoveButtonEventHandler = new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel, gameScore);
+        OnMoveButtonEventHandler onMoveButtonEventHandler = new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel, gameScore, mainWindow);
         submitQueryButton.setOnAction(onMoveButtonEventHandler);
 
         StyledLabel sorryLabelStyle = new StyledLabel(Color.DARKBLUE);
         Label sorryLabel = sorryLabelStyle.createStyledLabel("If you can't answer press the button\n\t\t  <<I give up>> ");
         Button loseButton = new Button("I give up");
         loseButton.setOnAction(e -> {
-
             TotalAccountWindow.show(onMoveButtonEventHandler.getGameScore());
             mainWindow.close();
         });
@@ -61,7 +60,7 @@ public class MainWindow {
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(10);
 
-        VBox mainVBox = new VBox(cityLabel, cityTextField, hBoxComputerAnswer,hintLabel, sorryLabel,hbox);
+        VBox mainVBox = new VBox(cityLabel, cityTextField, hBoxComputerAnswer, hintLabel, sorryLabel, hbox);
         mainVBox.setAlignment(Pos.TOP_CENTER);
         mainVBox.setSpacing(10);
         mainVBox.setPadding(new Insets(10, 10, 10, 10));
