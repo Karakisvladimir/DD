@@ -27,29 +27,25 @@ public class TotalAccountWindow {
         } else {
             labelWin.setText("YOU ARE LOSE, COMPUTER WIN");
         }
-            // Добавила расчет счета
-            Label labelTotalWin = new Label("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
 
-            Button submitButton = new Button("PLAY AGAIN?");
-            submitButton.setOnAction(e -> {
-                totalWindow.close();
-                //Добавила вызов метода сброса счета
-                gameScore.resetScore();
+        Label labelTotalWin = new Label("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
 
-                MainWindow.show();
-            });
-            HBox hbox = new HBox(submitButton);
-            hbox.setAlignment(Pos.CENTER);
-            hbox.setSpacing(10);
-            VBox vBox = new VBox(labelWin, labelTotalWin, hbox);
-            vBox.setAlignment(Pos.CENTER);
-            vBox.setSpacing(10);
-            vBox.setPadding(new Insets(10, 10, 10, 10));
-            Scene mainScene = new Scene(vBox);
-            totalWindow.setScene(mainScene);
-            totalWindow.show(); // Здесь вы должны передать аргумент.
+        Button submitButton = new Button("PLAY AGAIN?");
+        submitButton.setOnAction(e -> {
+            totalWindow.close();
+            gameScore.resetScore();
 
+            MainWindow.show();
+        });
+        HBox hbox = new HBox(submitButton);
+        hbox.setAlignment(Pos.CENTER);
+        hbox.setSpacing(10);
+        VBox vBox = new VBox(labelWin, labelTotalWin, hbox);
+        vBox.setAlignment(Pos.CENTER);
+        vBox.setSpacing(10);
+        vBox.setPadding(new Insets(10, 10, 10, 10));
+        Scene mainScene = new Scene(vBox);
+        totalWindow.setScene(mainScene);
+        totalWindow.show();
     }
-
-
 }

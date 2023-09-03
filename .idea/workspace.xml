@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3f603064-d7f6-4249-841f-b101e8e8f4f7" name="Changes" comment="fixed all windows">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dd/app/impl/GameScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dd/app/impl/GameScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dd/app/impl/OnMoveButtonEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dd/app/impl/OnMoveButtonEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dd/window/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dd/window/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dd/window/TotalAccountWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dd/window/TotalAccountWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dd/window/WelcomeWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dd/window/WelcomeWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,8 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.LaunchApplication" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.LaunchApplication" />
         <item itemvalue="Application.Main" />
