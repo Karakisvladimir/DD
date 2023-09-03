@@ -20,24 +20,21 @@ public class TotalAccountWindow {
         totalWindow.setTitle("TotalAccountWindow");
         totalWindow.setWidth(800);
         totalWindow.setHeight(400);
-        StyledLabel winLabelStyle = new StyledLabel(Color.GREEN);
-        Label labelWin = winLabelStyle.createStyledLabel(" ");
-        if (gameScore.getHumanScore() != gameScore.getComputerScore()) {
+        StyledLabel labelWinLabelStyle = new StyledLabel(Color.GREEN);
+        Label labelWin = labelWinLabelStyle.createStyledLabel(" ");
+
+        if (gameScore.getHumanScore() == gameScore.getComputerScore()) {
             labelWin.setText(" YOU ARE WIN, COMPUTER LOSE");
         } else {
             labelWin.setText("YOU ARE LOSE, COMPUTER WIN");
         }
-        StyledLabel labelTotalWinLabelStyle = new StyledLabel(Color.DARKBLUE);
+        StyledLabel labelTotalWinLabelStyle = new StyledLabel(Color.DARKCYAN);
         Label labelTotalWin = labelTotalWinLabelStyle.createStyledLabel("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
-
 
         Button submitButton = new Button("PLAY AGAIN?");
         submitButton.setOnAction(e -> {
             totalWindow.close();
-
-
             gameScore.resetScore();
-
             MainWindow.show();
         });
         HBox hbox = new HBox(submitButton);
