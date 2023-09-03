@@ -14,40 +14,48 @@ public class OnMoveButtonEventHandler implements EventHandler {
     private CityGetter cityGetter;
     private GameScore gameScore;
 
-    public OnMoveButtonEventHandler(){
+    public GameScore getGameScore() {
+        return gameScore;
     }
-    public OnMoveButtonEventHandler(TextField userTextField,Label answerLabel, Label hintLabel) {
+
+    public OnMoveButtonEventHandler() {
+    }
+
+    public OnMoveButtonEventHandler(TextField userTextField, Label answerLabel, Label hintLabel, GameScore gameScore) {
         this.userTextField = userTextField;
         this.answerLabel = answerLabel;
         this.cityGetter = new CityGetterByFile();
         this.hintLabel = hintLabel;
         this.answerLabel.setText(cityGetter.getLastCityByComputer());
         this.gameScore = new GameScore();
+        this.gameScore.incrementComputerScore();
     }
+
     @Override
     public void handle(Event event) {
-        gameScore.incrementHumanScore();
+
         String cityByUser = userTextField.getText();
-        if(cityGetter.validateCity(cityByUser)) {
-            if(!cityGetter.isCityUsed(cityByUser)) {
+        if (cityGetter.validateCity(cityByUser)) {
+            if (!cityGetter.isCityUsed(cityByUser)) {
+                gameScore.incrementHumanScore();
+                cityGetter.removeCityToProcess(userTextField.getText());
                 cityGetter.addProcessedCity(userTextField.getText());
-                String cityByComputer = cityGetter.getCity(cityByUser.charAt(cityByUser.length()-1));
-                if(cityByComputer.equals("")) {
+                String cityByComputer = cityGetter.getCity(cityByUser.charAt(cityByUser.length() - 1));
+                if (cityByComputer.equals("")) {
                     TotalAccountWindow.show(gameScore);
-                }
-                else {
+                } else {
                     answerLabel.setText(cityByComputer);
+                    cityGetter.removeCityToProcess(cityByComputer);
+                    cityGetter.addProcessedCity(cityByComputer);
                     hintLabel.setText("");
                     gameScore.incrementComputerScore();
                     userTextField.setText("");
                 }
-            }
-            else {
+            } else {
                 hintLabel.setText("City already used.");
             }
 
-        }
-        else {
+        } else {
             hintLabel.setText("Incorrect city name");
         }
     }

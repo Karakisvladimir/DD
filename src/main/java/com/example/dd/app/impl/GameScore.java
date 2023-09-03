@@ -4,23 +4,23 @@ public class GameScore {
     private int humanScore = 0;
     private int computerScore = 0;
 
-    public void incrementHumanScore(){
+    public void incrementHumanScore() {
         humanScore++;
     }
 
-    public void incrementComputerScore(){
+    public void incrementComputerScore() {
         computerScore++;
     }
 
-    public int getHumanScore(){
+    public int getHumanScore() {
         return humanScore;
     }
 
-    public int getComputerScore(){
+    public int getComputerScore() {
         return computerScore;
     }
 
-    public void resetScore(){
+    public void resetScore() {
         humanScore = 0;
         computerScore = 0;
     }

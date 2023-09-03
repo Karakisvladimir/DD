@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class CityGetterByFile extends CityGetter{
+public class CityGetterByFile extends CityGetter {
     public CityGetterByFile() {
         BufferedReader reader;
         try {
@@ -17,8 +17,6 @@ public class CityGetterByFile extends CityGetter{
 
             while (line != null) {
                 citiesToProcess.add(line);
-                System.out.println(line);
-                // read next line
                 line = reader.readLine();
 
             }
@@ -28,6 +26,6 @@ public class CityGetterByFile extends CityGetter{
             e.printStackTrace();
         }
         Random rd = new Random();
-        lastCityByComputer = citiesCatalog.get(rd.nextInt(citiesCatalog.size())+1);
+        lastCityByComputer = citiesCatalog.get(rd.nextInt(citiesCatalog.size()) + 1);
     }
 }
