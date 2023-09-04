@@ -30,11 +30,11 @@ public class MainWindow {
         gameScore.incrementComputerScore();
 
         StyledLabel citiesLabelStyle = new StyledLabel(Color.TAN);
-        Label cityLabel = citiesLabelStyle.createStyledLabel("Enter name of Cities:");
+        Label cityLabel = citiesLabelStyle.createStyledLabel("Enter the City's name: ");
         TextField cityTextField = new TextField();
 
         StyledLabel computerLabelStyle = new StyledLabel(Color.ORCHID);
-        Label computerLabel = computerLabelStyle.createStyledLabel("Computer:");
+        Label computerLabel = computerLabelStyle.createStyledLabel("Computer: ");
 
         StyledLabel computerAnswerLabelStyle = new StyledLabel(Color.CORAL);
         Label computerAnswerLabel = computerAnswerLabelStyle.createStyledLabel(null);
