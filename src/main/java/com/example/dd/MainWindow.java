@@ -10,11 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
 
 public class MainWindow {
 
@@ -41,10 +37,12 @@ public class MainWindow {
         Label computerAnswerLabel = computerLabelStyle.createStyledLabel(null);
         Label hintLabel = new Label();
         Button loseButton = new Button("I give up");
-        loseButton.setOnAction(e -> TotalAccountWindow.show());
+        //loseButton.setOnAction(e -> TotalAccountWindow.show(new ScoreBoard()));
         Button submitQueryButton = new Button("Make a move ");
+        ScoreBoard scoreBoard = new ScoreBoard();
 
-        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel));
+        submitQueryButton.setOnAction(new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel, scoreBoard));
+        loseButton.setOnAction(e -> TotalAccountWindow.show(scoreBoard));
 
         HBox hbox = new HBox(submitQueryButton, loseButton);
         hbox.setAlignment(Pos.CENTER);
