@@ -24,9 +24,9 @@ public class TotalAccountWindow {
         Label labelWin = winLabelStyle.createStyledLabel("  ");
 
         if (gameScore.getHumanScore() == gameScore.getComputerScore()) {
-            labelWin.setText(" YOU ARE WIN, COMPUTER LOSE");
+            labelWin.setText("YOU WON, COMPUTER LOST");
         } else {
-            labelWin.setText("YOU ARE LOSE, COMPUTER WIN");
+            labelWin.setText("YOU LOST, COMPUTER WON");
         }
         StyledLabel winTotalLabelStyle = new StyledLabel(Color.BLUEVIOLET);
         Label labelTotalWin = winTotalLabelStyle.createStyledLabel("Total Account: Player score: " + gameScore.getHumanScore() + " / Computer score: " + gameScore.getComputerScore());
