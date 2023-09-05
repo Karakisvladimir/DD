@@ -29,7 +29,7 @@ public class OnMoveButtonEventHandler implements EventHandler {
         this.cityGetter = new CityGetterByFile();
         this.hintLabel = hintLabel;
         this.answerLabel.setText(cityGetter.getLastCityByComputer());
-        this.gameScore = new GameScore();
+        this.gameScore = gameScore;
         this.gameScore.incrementComputerScore();
         this.mainWindow = mainWindow;
     }

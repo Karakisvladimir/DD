@@ -29,7 +29,6 @@ public class MainWindow {
         label.setMaxWidth(400);
         label.setMaxHeight(500);
         GameScore gameScore = new GameScore();
-        gameScore.incrementComputerScore();
 
         StyledLabel citiesLabelStyle = new StyledLabel(Color.TAN);
         Label cityLabel = citiesLabelStyle.createStyledLabel("Enter the City's name: ");
