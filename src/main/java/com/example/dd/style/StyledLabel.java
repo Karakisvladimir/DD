@@ -17,7 +17,7 @@ public class StyledLabel {
 
     public static Label createStyledLabel(String text) {
         Label label = new Label(text);
-        label.setFont(Font.font("Verdana", FontWeight.BOLD, 16));
+        label.setFont(Font.font("Verdana", FontWeight.BOLD, 13));
         label.setTextFill(textColor);
         return label;
     }

@@ -26,6 +26,6 @@ public class CityGetterByFile extends CityGetter {
             e.printStackTrace();
         }
         Random rd = new Random();
-        lastCityByComputer = citiesCatalog.get(rd.nextInt(citiesCatalog.size()) - 1);
+        lastCityByComputer = citiesCatalog.get(rd.nextInt(citiesCatalog.size()));
     }
 }
