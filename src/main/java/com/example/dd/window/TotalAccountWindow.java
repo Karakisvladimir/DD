@@ -11,6 +11,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import static com.example.dd.window.MainWindow.WELCOME_WINDOW_HEIGHT;
+import static com.example.dd.window.MainWindow.WELCOME_WINDOW_WIDTH;
 
 
 public class TotalAccountWindow {
@@ -18,8 +20,8 @@ public class TotalAccountWindow {
     public static void show(GameScore gameScore) {
         Stage totalWindow = new Stage();
         totalWindow.setTitle("TotalAccountWindow");
-        totalWindow.setWidth(800);
-        totalWindow.setHeight(400);
+        totalWindow.setWidth(WELCOME_WINDOW_WIDTH);
+        totalWindow.setHeight(WELCOME_WINDOW_HEIGHT);
         StyledLabel winLabelStyle = new StyledLabel(Color.GREEN);
         Label labelWin = winLabelStyle.createStyledLabel("  ");
 

@@ -12,12 +12,15 @@ import javafx.stage.Stage;
 
 
 public class WelcomeWindow {
+
+    public static final int WELCOME_WINDOW_WIDTH = 400;
+    public static final int WELCOME_WINDOW_HEIGHT = 100;
     public static void show() {
         Stage welcomeWindow = new Stage();
         welcomeWindow.show();
         welcomeWindow.setTitle("Welcome");
-        welcomeWindow.setWidth(400);
-        welcomeWindow.setHeight(100);
+        welcomeWindow.setWidth(WELCOME_WINDOW_WIDTH);
+        welcomeWindow.setHeight(WELCOME_WINDOW_HEIGHT);
 
         Label labelWelcome = new Label("Welcome to the game of your childhood and all smarties");
         labelWelcome.setFont(Font.font("Verdana", FontWeight.BOLD, 12));

@@ -18,11 +18,13 @@ import javafx.stage.Stage;
 
 
 public class MainWindow {
+    public static final int WELCOME_WINDOW_WIDTH = 400;
+    public static final int WELCOME_WINDOW_HEIGHT = 500;
     public static void show() {
         Stage mainWindow = new Stage();
         mainWindow.setTitle("Cities");
-        mainWindow.setWidth(400);
-        mainWindow.setHeight(500);
+        mainWindow.setWidth(WELCOME_WINDOW_WIDTH);
+        mainWindow.setHeight(WELCOME_WINDOW_HEIGHT);
         Label label = new Label();
         label.setMaxWidth(400);
         label.setMaxHeight(500);
