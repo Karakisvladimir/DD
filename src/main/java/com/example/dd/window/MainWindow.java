@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 
 public class MainWindow {
-    public static final int WELCOME_WINDOW_WIDTH = 400;
+    public static final int WELCOME_WINDOW_WIDTH = 450;
     public static final int WELCOME_WINDOW_HEIGHT = 500;
     public static void show() {
         Stage mainWindow = new Stage();
@@ -42,11 +42,13 @@ public class MainWindow {
         Label hintLabel = new Label();
 
         Button submitQueryButton = new Button("Make a move ");
-        OnMoveButtonEventHandler onMoveButtonEventHandler = new OnMoveButtonEventHandler(cityTextField, computerAnswerLabel, hintLabel, gameScore, mainWindow);
+        OnMoveButtonEventHandler onMoveButtonEventHandler = new OnMoveButtonEventHandler(cityTextField,
+                computerAnswerLabel, hintLabel, gameScore, mainWindow);
         submitQueryButton.setOnAction(onMoveButtonEventHandler);
 
         StyledLabel sorryLabelStyle = new StyledLabel(Color.DARKBLUE);
-        Label sorryLabel = sorryLabelStyle.createStyledLabel("If you can't answer press the button\n\t\t  <<I give up>> ");
+        Label sorryLabel = sorryLabelStyle.createStyledLabel("If you can't answer press the button\n\t\t  " +
+                "<<I give up>> ");
         Button loseButton = new Button("I give up");
         loseButton.setOnAction(e -> {
             TotalAccountWindow.show(onMoveButtonEventHandler.getGameScore());
